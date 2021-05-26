@@ -2,23 +2,31 @@
   <v-app>
     <v-app-bar app fixed flat>
       <v-toolbar-title class="overline" v-text="'Gerenciamento de Filas'" />
+
+      <v-spacer />
+
+      <v-btn icon @click="darkTheme = !darkTheme">
+        <v-icon
+          v-text="darkTheme ? 'mdi-white-balance-sunny' : 'mdi-weather-night'"
+        />
+      </v-btn>
     </v-app-bar>
 
     <v-main>
       <v-container fluid>
         <v-row>
           <v-col md="3">
-            <BaseSection>
+            <CoreSection>
               <TheSidebar />
-            </BaseSection>
+            </CoreSection>
           </v-col>
 
           <v-col>
-            <BaseSection>
+            <CoreSection>
               <v-card-text>
                 <nuxt />
               </v-card-text>
-            </BaseSection>
+            </CoreSection>
           </v-col>
         </v-row>
       </v-container>
@@ -31,5 +39,15 @@ export default {
   data: () => ({
     drawer: true,
   }),
+  computed: {
+    darkTheme: {
+      get() {
+        return this.$vuetify.theme.isDark
+      },
+      set(status) {
+        this.$vuetify.theme.isDark = status
+      },
+    },
+  },
 }
 </script>
