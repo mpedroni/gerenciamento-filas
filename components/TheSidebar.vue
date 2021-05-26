@@ -4,6 +4,7 @@
       <v-list-item
         v-for="{ icon, title, to } in menu"
         :key="to"
+        nuxt
         :to="to"
         active-class="primary--text"
       >
@@ -27,6 +28,7 @@ import Vue from 'vue'
 import { menu } from '~/config/menu'
 
 export default Vue.extend({
+  name: 'TheSidebar',
   data: () => ({
     activeItem: null,
     menu,
