@@ -1,5 +1,11 @@
 <template>
-  <v-text-field v-model="input" v-bind="$attrs" outlined :rules="getRules" />
+  <v-text-field
+    v-model="input"
+    v-bind="$attrs"
+    outlined
+    :rules="getRules"
+    v-on="$listeners"
+  />
 </template>
 
 <script lang="ts">
