@@ -10,6 +10,10 @@
       </v-col>
 
       <v-col cols="12" md="6">
+        <CoreDatePicker no-title />
+      </v-col>
+
+      <v-col cols="12" md="6">
         <CoreTextInput
           v-model="birthCertificate"
           label="Certidão de Nascimento"
